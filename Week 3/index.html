@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Okcoders javaScript</title>
+</head>
+
+<body>
+    <div id="myList">
+
+
+    </div>
+    <input type="text" id="name" placeholder="Charles Dickens">
+    <input type="text" id="title" placeholder="bla bla bla">
+    <button onclick="displayToScreen()">Set Author</button>
+    <button onclick="removeBook()">Remove</button>
+    <script>
+
+
+        var book1 = { author: "J.R.R. Tolken", title: "Lord of the rings" };
+        var book2 = { author: "Charles Dickens", title: "A Tales of two cities" };
+        var book3 = { title: "Blitzcaling", author: "Reid Hoffman" };
+
+        let books = [{ author: "J.R.R. Tolken", title: "Lord of the rings" },
+        { author: "Charles Dickens", title: "A Tales of two cities" },
+        { title: "Blitzcaling", author: "Reid Hoffman" }];
+
+        function displayToScreen() {
+            var n = document.getElementById("name").value;
+            var t = document.getElementById("title").value;
+            // let newBook = { title: t, author:n }
+            books.push({ title: t, author: n });
+            printAuthList();
+            // document.getElementById("author").innerText = i;
+        }
+
+        function printAuthList() {
+            let auth = document.getElementById("myList");
+            auth.innerHTML = "";
+            for (let i = 0; i < books.length; i++) {
+                auth.innerHTML += "<h2>" + books[i].title + "</h2>";
+                auth.innerHTML += "<h4>" + books[i].author + "</h4>";
+            }
+        }
+        printAuthList();
+
+        function removeBook() 
+            books.pop();
+            removeBook();
+        }
+    
+        
+
+        //  <!-- <h1 id="title"></h1>
+        // <h3 id="author"></h3> -->
+        //  displayToScreen(name);
+    // function displayToScreen(a, t) {
+    //     document.getElementById("author").innerText = a;
+    //     document.getElementById("title").innerText= t;
+    //      }
+    //     //  let auth = prompt("Name of Author?");
+        //  let titl = prompt("Name of Title?");
+        //  displayToScreen(auth, titl);
+
+    // //Add
+    // let ourList = [ "one", "two", "3"];
+    // ourList.push("4");
+    // ourList[3] = "hihihih";
+    // // remove
+    // ourList.shift("one");
+    // ourList.pop();
+    // ourList.length = 2;
+    // delete ourList[1];
+    // ourList[ourList.length] = "bla bla bla"
+    // for(var i = 0; i < ourList.length; i++) {
+    //     displayToScreen(ourList[i]);
+    //     document.write("<br>");
+    // }
+
+    </script>
+</body>
+
+</html>
